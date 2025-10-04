@@ -1,0 +1,73 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body {
+    background-color: rgb(36, 36, 36);
+    color: rgb(0, 0, 0);
+    margin: 0;
+
+}
+
+h1 {
+    color: orange;
+    display: flex;
+    justify-content: center;
+}
+
+#products-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    max-width: 100vw; 
+}
+
+.product-item {
+    border: 5px solid orange;
+    padding: 15px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgb(1, 2, 88);
+    background-color: rgba(249, 247, 243);
+    font-family: poppins;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product-item h3 {
+    margin: 10px 0 5px;
+}
+
+.product-item p {
+    margin: 5px 0;
+    font-size: medium;
+}
+
+/* Small tablet styles */
+@media screen and (min-width: 620px) {
+    
+}
+
+/* Large tablets & laptop styles */
+
+@media screen and (min-width: 960px) {
+
+}
+/* Desktop styles */
+
+@media screen and (min-width: 1200px) {
+
+}

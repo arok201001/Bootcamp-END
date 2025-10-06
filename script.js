@@ -1,9 +1,14 @@
 
+
+// Fetch API Data
 const API_URL = "https://api.futureplayground.se/products";
 
 const productsList = document.getElementById
 ("products-list");
 
+const cart = {};
+const cartItemsList = document.getElementById("cart-items");
+const cartTotal = document.getElementById("total-sum");
 
 const getProducts = async () => {
 
@@ -14,6 +19,40 @@ const getProducts = async () => {
     return parsedData;
 };
 
+// Shopping Cart
+
+function updateCart() {
+    cartItemsList.innerHTML = "";
+    let totalPrice = 0;
+    let totalItems = 0;
+
+    for (const [name, item] of Object.entries(cart)) {
+        const li = document.createElement("li");
+        li.textContent = `${name} x ${item.quantity} - ${item.price * item.quantity}kr`;
+
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "Remove";
+        removeBtn.classList.add("remove-btn");
+        removeBtn.style.marginleft = "10px";
+        removeBtn.addEventListener("click", () => {
+            delete cart[name];
+            updateCart();
+        })
+
+
+        li.appendChild(removeBtn);
+        cartItemsList.appendChild(li);
+
+        totalPrice += item.price * item.quantity;
+        totalItems += item.quantity;
+    }
+        
+    cartTotal.textContent = `Totalt: ${totalPrice}kr (${totalItems} items)`;
+
+    }
+
+
+    // Display Product List from API
 const displayProducts = async () => {
     const products = await getProducts();
 
@@ -43,11 +82,26 @@ const displayProducts = async () => {
 
         const productDescription = document.createElement("p");
         productDescription.textContent = description;
+        
+        // Add to Cart btn
+        const addToCartBtn = document.createElement("button");
+        addToCartBtn.textContent = "Add to Cart";
+        addToCartBtn.classList.add("add-to-cart");
+        addToCartBtn.addEventListener("click", () => {
+            if (!cart[name]) {
+                cart[name] = {price: price, quantity: 1};
+            } else {
+                cart[name].quantity++;
+            }
+            updateCart();
+        console.log(`Added to cart: ${name}`);
+    });
 
         productDiv.appendChild(productImg);
         productDiv.appendChild(productTitle);
         productDiv.appendChild(productPrice);
         productDiv.appendChild(productDescription);
+        productDiv.appendChild(addToCartBtn);
 
         productsList.appendChild(productDiv);
 
@@ -55,4 +109,5 @@ const displayProducts = async () => {
 };
 
 displayProducts()
+
 

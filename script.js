@@ -31,7 +31,7 @@ function updateCart() {
         li.textContent = `${name} x ${item.quantity} - ${item.price * item.quantity}kr`;
 
         const removeBtn = document.createElement("button");
-        removeBtn.textContent = "Remove";
+        removeBtn.textContent = "Ta bort";
         removeBtn.classList.add("remove-btn");
         removeBtn.style.marginleft = "10px";
         removeBtn.addEventListener("click", () => {
@@ -47,7 +47,7 @@ function updateCart() {
         totalItems += item.quantity;
     }
         
-    cartTotal.textContent = `Totalt: ${totalPrice}kr (${totalItems} items)`;
+    cartTotal.textContent = `Totalt: ${totalPrice}kr (${totalItems} Produkter)`;
 
     }
     
@@ -86,7 +86,7 @@ const displayProducts = async () => {
         
         // Add to Cart btn
         const addToCartBtn = document.createElement("button");
-        addToCartBtn.textContent = "Add to Cart";
+        addToCartBtn.textContent = "Lägg till i kundvagn";
         addToCartBtn.classList.add("add-to-cart");
         addToCartBtn.addEventListener("click", () => {
             if (!cart[name]) {

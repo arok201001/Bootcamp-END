@@ -55,38 +55,82 @@ h1 {
 }
 
 .cart {
+  height: 100%;
+  width: 250px;
   font-family: poppins;
   font-size: medium;
   font-weight: 500;
   background-color: orange;
   color: black;
-  padding-left: 100px;
-  width: 350px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 30px 15px;
+  background: rgba(22, 249, 238, 0.7);
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+  transition: width 0.3s ease;
+  justify-content: space-between;
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+  z-index: 1000;
+}
+
+.cart:hover {
+    width: 250px;
 }
 
 .cart-items {
     font-family: poppins;
     font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding-top: 50px;
+    pointer-events: none;
 }
 
-.cart-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    padding-right: 30px;
+.cart:hover .cart-items {
+  opacity: 1;
 }
+
+
+.cart.open {
+  transform: translateX(0);
+}
+
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 
 .cart svg {
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.bagBtn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: orange;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1100;
+    transition: background 0.3s ease;
 }
 
 .remove-btn {
     font-family: poppins;
-    font-size: medium;
+    font-size: small;
     border-radius: 15px;
     background-color: black;
     color: orange;
+    
 }
 
 .product-item button {

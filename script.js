@@ -50,6 +50,7 @@ function updateCart() {
     cartTotal.textContent = `Totalt: ${totalPrice}kr (${totalItems} items)`;
 
     }
+    
 
 
     // Display Product List from API
@@ -95,6 +96,9 @@ const displayProducts = async () => {
             }
             updateCart();
         console.log(`Added to cart: ${name}`);
+        
+
+
     });
 
         productDiv.appendChild(productImg);

@@ -21,6 +21,7 @@ const getProducts = async () => {
 
 // Shopping Cart
 
+
 function updateCart() {
     cartItemsList.innerHTML = "";
     let totalPrice = 0;
@@ -46,6 +47,7 @@ function updateCart() {
         totalPrice += item.price * item.quantity;
         totalItems += item.quantity;
     }
+    document.getElementById("totalItemsCircle").innerHTML=totalItems
         
     cartTotal.textContent = `Totalt: ${totalPrice}kr (${totalItems} Produkter)`;
 
@@ -106,7 +108,6 @@ const displayProducts = async () => {
         productDiv.appendChild(productPrice);
         productDiv.appendChild(productDescription);
         productDiv.appendChild(addToCartBtn);
-
         productsList.appendChild(productDiv);
 
     }

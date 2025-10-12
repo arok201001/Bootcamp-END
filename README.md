@@ -1,7 +1,7 @@
 ## Fly Store - Examination project (Bootcamp)
 Bootcamp final project.
 
-My project is an E-Commerce site called "Fly Store" with products fetched and displayed with API. I have also implemented a shopping cart which both counts the amount of products you have added to the shopping cart and the total price. The styling of the site is prette simple and easy to read it should be in line with WCAG.
+My project is an E-Commerce site called "Fly Store" with products fetched and displayed with API. I have also implemented a shopping cart which both counts the amount of products you have added to the shopping cart and the total price. The styling of the site is pretty simple and easy to read it should be in line with WCAG.
 
 Set step by step guide.
 
